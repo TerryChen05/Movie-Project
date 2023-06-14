@@ -3,13 +3,14 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "../store";
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, getAuth } from "firebase/auth";
 
 const router = useRouter();
 const store = useStore();
 const email = ref();
 const password = ref();
 let incorrect = ref();
+const provider = new GoogleAuthProvider();
 
 const loginViaEmail = async () => {
   try {
@@ -25,6 +26,18 @@ const loginViaEmail = async () => {
     incorrect.value = `Incorrect e-mail or password`;
   }
 };
+
+const authenticate = getAuth();
+const loginViaGoogle = () => {
+  signInWithPopup(authenticate, provider)
+  .then((result) => {
+    const { user } = result.user;
+    store.user = user;
+    router.push('/purchase')
+  }).catch((error) => {
+    console.log(error);
+  });
+}
 </script>
 
 <template>
@@ -47,6 +60,7 @@ const loginViaEmail = async () => {
       <button type="button" @click="router.push('./register')">Sign Up</button>
       <p id="error-message">{{ incorrect }}</p>
     </form>
+    <button @click="loginViaGoogle">Login with Google</button>
   </div>
 </template>
 
