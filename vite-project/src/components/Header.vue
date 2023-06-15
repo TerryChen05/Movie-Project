@@ -6,12 +6,12 @@ const router = useRouter();
 <template>
     <div class="header-container">
         <h1>Monkey</h1>
-        <img src="../assets/images/logo.png" width="250" height="250" style="border:4px solid#eeff00;border-radius: 125px">
+        <img src="../assets/images/logo.png" width="250" height="250" style="border:4px solid#7c1bc6;border-radius: 125px">
         <h1>Movies</h1>
     </div>
     <div class="button-container">
         <button @click="router.push('/login')">Login</button>
-        <button @click="router.push('/register')">Reg</button>
+        <button @click="router.push('/register')">Register</button>
     </div>
 </template>
 
@@ -20,6 +20,8 @@ const router = useRouter();
 
 * {
     font-family: Righteous;
+    margin: 0;
+    padding: 0;
 }
 .header-container {
     display: flex;
@@ -31,7 +33,8 @@ const router = useRouter();
 h1 {
     padding: 1em;
     font-size: 40px;
-    color: #0dbe60;
+    color: #654ee6;
+    text-shadow: #000 1px 1px 1px;
 }
 
 button {
@@ -41,11 +44,12 @@ button {
     margin: auto;
     border-radius: 50px;
     font-size: 20px;
-    background-color: #0dbe60;
+    background-color: #1b84c6;
+    margin-bottom: 10px;
 }
 
 .button-container {
-    padding: 1.5em;
+    padding: 1.3em;
 }
 
 </style>

@@ -32,14 +32,16 @@ const getTMDBData = async (url, options, page) => {
   totalPages.value = movies.value.total_pages;
   currentURL.value = url;
 };
+
 </script>
 
 <template>
   <div>
-    <div class="controls">
+    <div >
       <div>
         <input
           type="search"
+          class="controls"
           placeholder="Enter search items"
           v-model="search"
         />
@@ -53,7 +55,7 @@ const getTMDBData = async (url, options, page) => {
           Search
         </button>
       </div>
-      <div>
+      <div class="genre-get">
         <select v-model="genre">
           <option value="28">Action</option>
           <option value="10751">Family</option>
@@ -84,8 +86,8 @@ const getTMDBData = async (url, options, page) => {
         >
           Get
         </button>
-        <button @click="router.push('/cart')">Cart</button>
       </div>
+      <button class="cart-button" @click="router.push('/cart')">CART</button>
     </div>
     <div class="pagination">
       <button
@@ -137,32 +139,48 @@ h1 {
   transform: translateX(10%);
 
 }
-.movie-title {
-  display: block;
-  
-}
+
 .tiles {
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0;
+
 }
 
 img {
-  width: 90%;
-  border: 4px solid #0dbe60;
+  width: 80%;
+  border: 6px solid #5634df;
+  border-radius: 5%;
   cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination button {
+  transform: translateY(-50%);
+}
+
+.genre-get {
+  margin-bottom: 35px;
+  margin-left: 15px;
+}
+.genre-get select {
+  height: 55px;
+  width: 160px;
+  text-align-last: center;
 }
 
 .cart-button {
-  display: block;
-  margin-left: auto;
-  width: 8%;
-  background-color: #0dbe60;
-  font-size: 1.5em;
-  padding: 10px;
-  border-radius: 15px;
-  transform: translateY(-150%);
-
+  position:absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+}
+.controls {
+  margin-left: 15px;
 }
 </style>

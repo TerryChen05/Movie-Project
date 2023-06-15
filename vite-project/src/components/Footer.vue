@@ -5,7 +5,6 @@
         <div class="footer-container">
             <div class="first-text">
                 <h4>Business inquiries?: &nbsp 1-800-xxx-xxx</h4>
-                <h4 class="footer-text">We at MONKEY MOVIES are a non-profit organization intended to support monkey????????</h4>
             </div>
             <div class="secondary-text">
                 <h4>FAQ?</h4>
@@ -13,6 +12,7 @@
                 <h4>HELP?</h4>
                 <h4>DONATE?</h4>
             </div>
+            <h4 class="footer-text">MOMKEY MOVIES</h4>
         </div>
     </div>
 </template>
@@ -28,20 +28,24 @@
 .footer-content {
     padding: 1em;
     padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
 }
 .footer-container {
-    width: 80vw;
-    height: 25vh;
+    width: 100vw;
+    height: 35vh;
     display: block;
     margin: auto;
-    background-image: url('../assets/images/footerbg.png');
+    background-image: url('../assets/images/footerbg.jpg');
     background-size: cover;
-    background-position: 100%, 100%;
+    background-position-y: 25%;
 }
 
 h4 {
-    color: aliceblue;
+    color: rgb(255, 255, 255);
+    text-shadow: #000 1px 1px 1px;
     padding: 25px;
+    font-size: 20px;
 }
 .footer-text {
     width: 50%;

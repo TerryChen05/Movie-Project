@@ -3,7 +3,7 @@
   padding:0;
 }
 body {
-    background-size: 100vw;
-    background-position: contain;
-    background-image: url('./assets/images/moviebg.jpg');
+    background-size: 110vw;
+    background-size: cover;
+    background-image: url('./assets/images/backgr.jpg');
   } 

@@ -24,7 +24,7 @@ const movie = (
         <div v-if="movie">
           <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" />
           <h1>{{ movie.title }}</h1>
-          <h2>Release date: {{ movie.release_date }}</h2>
+          <h1>Release date: {{ movie.release_date }}</h1>
           <button
             class="cart-button"
             type="button"
@@ -51,7 +51,9 @@ const movie = (
   z-index: 5;
 }
 .modal-outer-container .modal-inner-container {
-  background-color: #df4141;
+  background-image: url("../assets/images/amogus.avif");
+  background-size: 100%;
+  background-position: 100px;
   width: clamp(280px, 100%, 900px);
   height: 55vh;
   position: relative;
@@ -62,7 +64,7 @@ const movie = (
   right: 10px;
   padding: 1rem;
   border: none;
-  background: #df4141;
+  background: #faf4f4;
   font-weight: bold;
 }
 .modal-outer-container .modal-inner-container .icon {
@@ -71,16 +73,14 @@ const movie = (
 }
 img {
   width: 200px;
+  border-radius: 7%;
 }
-h3 {
-    border:4px solid rgb(28, 214, 15);
-    width: 10%;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    background-color: aliceblue;
+h1 {
+    color: rgb(237, 202, 202);
 }
 .cart-button {
-  border: 4px solid green;
+  transform: translateY(-45%);
+  cursor: pointer;
 }
+
 </style>

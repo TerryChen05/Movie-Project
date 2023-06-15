@@ -2,8 +2,8 @@
 
 <template>
   <div class="hero-container">
-    <h1>ALL YOUR FAVORITE MOVIES IN ONE SPOT!</h1>
-    <h2>PURCHASE MOVIES FROM MONKEY MOVIES TODAY!</h2>
+    <h1>Unlimited movies, TV shows, and more!</h1>
+    <h2>Purchase your favorite movies today!</h2>
   </div>
 </template>
 
@@ -17,21 +17,28 @@
 .hero-container {
   display: block;
   margin: auto;
-  height: 50vh;
-  background-image: url('../assets/images/herobg.png');
+  height: 90vh;
+  background-image: url('../assets/images/herobg.jpg');
   background-size: cover;
+  background-position: 0% 30%;
 
 }
+
 h1 {
-  color: rgb(245, 14, 60);
-  text-shadow: #000 2px 2px 3px;
+  background-image: linear-gradient(45deg, #1d53d1, #d3109c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
   padding: 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
-  transform: translateY(100%);
-  font-size: 30px;;
+  transform: translateY(110%);
+  font-size: 60px;
 }
+
 h2 {
   color: rgb(247, 0, 148);
   text-shadow: #000 2px 2px 3px;
@@ -40,7 +47,8 @@ h2 {
   display: flex;
   justify-content: center;
   margin-top: 3em;
-  transform: translateY(40%);
-  font-size: 20px;
+  align-items: center;
+  transform: translateY(120%);
+  font-size: 30px;
 }
 </style>

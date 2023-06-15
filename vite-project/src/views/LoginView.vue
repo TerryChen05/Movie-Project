@@ -38,10 +38,11 @@ const loginViaGoogle = () => {
     console.log(error);
   });
 }
+await store.populateFirestore();
 </script>
 
 <template>
-  <div>
+  <div class="login-container">
     <h1>Sign In</h1>
     <form class="login-box" @submit.prevent="loginViaEmail()">
       <input
@@ -57,10 +58,11 @@ const loginViaGoogle = () => {
         v-model="password"
       />
       <input class="login-button" type="submit" value="Login" />
-      <button type="button" @click="router.push('./register')">Sign Up</button>
       <p id="error-message">{{ incorrect }}</p>
     </form>
-    <button @click="loginViaGoogle">Login with Google</button>
+    <button class="google-login" @click="loginViaGoogle">Login with Google</button>
+    <button type="button" @click="router.push('./register')">Sign Up</button>
+
   </div>
 </template>
 
@@ -87,7 +89,10 @@ input {
 }
 .login-button {
   margin: 1em;
-  border-radius: 30px;
+  border-radius: 20px;
+  background-color: #0dbe60;
+}
+.google-login {
   background-color: #0dbe60;
 }
 

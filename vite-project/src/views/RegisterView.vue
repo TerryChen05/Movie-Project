@@ -42,9 +42,9 @@ const registerViaGoogle = async () => {
 
 <template>
   <div class="auth-container">
-    <div>
+    <div >
       <h1>Register with Google</h1>
-      <button @click="registerViaGoogle()">Google</button>
+      <button class="google-button" @click="registerViaGoogle()">Google</button>
     </div>
     <h1>Register with email</h1>
     <form @submit.prevent="registerViaEmail()">
@@ -55,9 +55,9 @@ const registerViaGoogle = async () => {
         type="password"
         placeholder="Confirm Password"
       />
-      <input type="submit" value="Register" />
+      <input class="reg-button" type="submit" value="Register" />
     </form>
-    <button type="button" @click="router.push('./login')">Log in</button>
+    <button class="login-button" type="button" @click="router.push('./login')">Log in</button>
   </div>
 </template>
 
@@ -68,24 +68,36 @@ const registerViaGoogle = async () => {
     font-family: Righteous;
     font-size: 1em;
 }
-.login-container {
+.auth-container {
   width: 50%;
   display: flex;
   flex-direction: column;
   padding: 1em;
   margin:auto;
   align-items: center;
-  transform: translateY(50%);
+  transform: translateY(60%);
 }
 
 input {
   padding: 1em;
   margin: auto;
 }
-.login-button {
+button {
   margin: 1em;
-  border-radius: 30px;
-  background-color: #0dbe60;
+  border-radius: 20px;
+  background-color: #1b84c6;
+  padding: 15px;
+}
+h1 {
+  padding: 5px;
+}
+.google-button {
+  transform: translateX(25%);
+}
+.reg-button {
+  background-color: #1b84c6;
+  border-radius: 20px;
+  transform: translateX(20%);
 }
 
 </style>
