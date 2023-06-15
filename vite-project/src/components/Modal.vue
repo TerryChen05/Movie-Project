@@ -25,7 +25,13 @@ const movie = (
           <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" />
           <h1>{{ movie.title }}</h1>
           <h2>Release date: {{ movie.release_date }}</h2>
-          <h3 @click="store.addToCart(movie.poster_path, movie.title)">Buy</h3>
+          <button
+            class="cart-button"
+            type="button"
+            @click="store.addToCart(movie.poster_path, movie.title)"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
@@ -73,5 +79,8 @@ h3 {
     text-align: center;
     cursor: pointer;
     background-color: aliceblue;
+}
+.cart-button {
+  border: 4px solid green;
 }
 </style>

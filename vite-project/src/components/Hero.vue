@@ -17,11 +17,9 @@
 .hero-container {
   display: block;
   margin: auto;
-  width: 80vw;
   height: 50vh;
   background-image: url('../assets/images/herobg.png');
   background-size: cover;
-  background-position: 90%, 90%;
 
 }
 h1 {

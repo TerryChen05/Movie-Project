@@ -5,6 +5,12 @@ import { useStore } from "../store/index.js";
 
 const store = useStore();
 const router = useRouter();
+
+const removeItem = (item) => {
+  const index = store.cart.indexOf(item);
+  store.removeFromCart(index);
+};
+
 </script>
 
 <template>
@@ -15,6 +21,7 @@ const router = useRouter();
       <h1>{{ movie.title }}</h1>
       <h1>$1.00</h1>
       <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster}`" />
+      <button @click="removeItem(item)">Remove</button>
     </div>
   </div>
 </template>
