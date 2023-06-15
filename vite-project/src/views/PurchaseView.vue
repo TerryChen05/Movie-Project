@@ -3,6 +3,7 @@ import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import Modal from "../components/Modal.vue";
+
 const router = useRouter();
 const genre = ref(28);
 const search = ref("");
@@ -32,12 +33,11 @@ const getTMDBData = async (url, options, page) => {
   totalPages.value = movies.value.total_pages;
   currentURL.value = url;
 };
-
 </script>
 
 <template>
   <div>
-    <div >
+    <div>
       <div>
         <input
           type="search"
@@ -137,7 +137,6 @@ h1 {
   color: #f3f1f1;
   text-shadow: #47fc00c0 2px 2px 3px;
   transform: translateX(10%);
-
 }
 
 .tiles {
@@ -145,7 +144,6 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0;
-
 }
 
 img {
@@ -175,7 +173,7 @@ img {
 }
 
 .cart-button {
-  position:absolute;
+  position: absolute;
   top: 0;
   right: 0;
   font-size: 20px;
