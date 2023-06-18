@@ -18,14 +18,14 @@
   display: block;
   margin: auto;
   height: 90vh;
-  background-image: url('../assets/images/herobg.jpg');
+  background-image: url('../assets/images/hero.jpg');
   background-size: cover;
   background-position: 0% 30%;
 
 }
 
 h1 {
-  background-image: linear-gradient(45deg, #1d53d1, #d3109c);
+  background-image: linear-gradient(45deg, #f2ff00, #ff0bba);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(247, 0, 148);
+  color: rgb(0, 255, 110);
   text-shadow: #000 2px 2px 3px;
   padding: 2rem;
   width: 100%;

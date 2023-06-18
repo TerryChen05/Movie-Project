@@ -36,7 +36,7 @@ const getTMDBData = async (url, options, page) => {
 </script>
 
 <template>
-  <div>
+  <div class="purchase-view">
     <div>
       <div>
         <input
@@ -131,11 +131,10 @@ const getTMDBData = async (url, options, page) => {
 </template>
 
 <style scoped>
+
 h1 {
   font-size: 50px;
   margin-left: 20%;
-  color: #f3f1f1;
-  text-shadow: #47fc00c0 2px 2px 3px;
   transform: translateX(10%);
 }
 
@@ -148,12 +147,19 @@ h1 {
 
 img {
   width: 80%;
-  border: 6px solid #5634df;
-  border-radius: 5%;
+  border-radius: 10%;
   cursor: pointer;
   margin-bottom: 50px;
+  margin-left: 15%;
 }
 
+button {
+  margin: 1em;
+  border-radius: 20px;
+  background-color: #ff2929;
+  color: rgb(235, 239, 245);
+  cursor: pointer;
+}
 .pagination {
   display: flex;
   justify-content: center;

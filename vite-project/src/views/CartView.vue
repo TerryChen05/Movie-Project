@@ -32,13 +32,19 @@ const removeItem = (item) => {
 
 .shopbox {
   display: flex;
+  margin-left: 10em;
+  padding-bottom: 20px;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0;
+  border: 1px solid black;
+  width: 75%;
+  background-color: #7d7d7d;
 }
 
 .shopbox h1 {
   transform: translate(10%, 30%);
 }
+
 
 img {
   border: 4px solid #f7f7f7;
@@ -48,28 +54,35 @@ img {
 }
 h1 {
   transform: translate(40%, 250px);
-  text-shadow: #520975 2px 2px 3px;
+  text-shadow: #ff2929 2px 2px 3px;
   font-size: 20px;
-  color: #f3f1f1;
+  color: #f1efef;
 }
 .cart-title {
   display: inline-block;
   font-size: 50px;
-  margin-left: 30%;
-  color: #f3f1f1;
-  text-shadow: #fc00dfc0 2px 2px 3px;
+  margin-left: 28%;
+  color: rgb(235, 239, 245);
+  text-shadow: #ff2929 4px 4px 4px;
 }
 .purchase-button {
-  background-color: #c70ad8;
+  color: rgb(235, 239, 245);
+  background-color: #ff2929;
   margin: 5px;
   font-size: 1.5em;
   padding: 12px;
   border-radius: 15px;
   width: 8%;
+  margin-left: 20px;
 }
 
 .remove-but {
   height: 50px;
-  transform: translate(150%, 200%)
+  transform: translate(150%, 200%);
+  margin: 1em;
+  border-radius: 20px;
+  background-color: #ff2929;
+  color: rgb(235, 239, 245);
+  cursor: pointer;
 }
 </style>
