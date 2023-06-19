@@ -1,8 +1,10 @@
 <script setup>
 import axios from "axios";
 import { useStore } from "../store";
+
 const store = useStore();
 const props = defineProps(["id"]);
+
 const movie = (
   await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
     params: {
@@ -13,7 +15,6 @@ const movie = (
     },
   })
 ).data;
-
 </script>
 
 <template>
@@ -25,7 +26,11 @@ const movie = (
           <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" />
           <h1>{{ movie.title }}</h1>
           <h1>Release date: {{ movie.release_date }}</h1>
-          <button class="cart-button" type="button" @click="store.addToCart(movie.poster_path, movie.title)">
+          <button
+            class="cart-button"
+            type="button"
+            @click="store.addToCart(movie.poster_path, movie.title)"
+          >
             Add to Cart
           </button>
         </div>
@@ -52,7 +57,7 @@ const movie = (
   background-size: 100%;
   background-position: 100px;
   width: clamp(280px, 100%, 900px);
-  height: 55vh;
+  height: 50vh;
   position: relative;
   padding: 1em;
 }
@@ -97,7 +102,7 @@ button {
 }
 
 button:hover {
-  background-color: #3e8e41
+  background-color: #3e8e41;
 }
 
 button:active {
@@ -105,5 +110,4 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(1px);
 }
-
 </style>

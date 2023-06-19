@@ -13,10 +13,12 @@ const currentURL = ref("");
 const totalPages = ref(0);
 const showModal = ref(false);
 const selectedRecordId = ref(0);
+
 const toggleModal = (id) => {
   showModal.value = !showModal.value;
   selectedRecordId.value = id;
 };
+
 const getTMDBData = async (url, options, page) => {
   movies.value = (
     await axios.get(url, {
@@ -106,12 +108,14 @@ const getTMDBData = async (url, options, page) => {
       <p>{{ `Page ${page} of ${totalPages}` }}</p>
       <button
         @click="
+          page === totalPages ? totalPages : page++,
           getTMDBData(
             currentURL,
             {
               query: search,
+              with_genres: genre,
             },
-            page >= totalPages ? totalPages : page++
+            page
           )
         "
       >
@@ -131,7 +135,6 @@ const getTMDBData = async (url, options, page) => {
 </template>
 
 <style scoped>
-
 h1 {
   font-size: 50px;
   margin-left: 20%;

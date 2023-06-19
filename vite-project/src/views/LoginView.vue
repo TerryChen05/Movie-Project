@@ -19,7 +19,6 @@ const passwordTwo = ref("");
 const emailTwo = ref("");
 const passwordThree = ref("");
 
-
 const registerViaEmail = async () => {
   if (passwordOne.value !== passwordTwo.value) {
     alert("Passwords don't match!");
@@ -87,7 +86,12 @@ const registerViaGoogle = async () => {
     <h1>Sign In</h1>
     <form class="login-box" @submit.prevent="loginViaEmail()">
       <input class="login-info" type="email" placeholder="Email" v-model="emailTwo" />
-      <input class="login-info" type="password" placeholder="Password" v-model="passwordThree" />
+      <input
+        class="login-info"
+        type="password"
+        placeholder="Password"
+        v-model="passwordThree"
+      />
       <input class="login-button" type="submit" value="Login" />
     </form>
     <button class="google-login" @click="registerViaGoogle()">Login with Google</button>
@@ -103,7 +107,7 @@ const registerViaGoogle = async () => {
 }
 
 .login-container {
-  width: 55%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -121,15 +125,17 @@ const registerViaGoogle = async () => {
   margin-bottom: 15px;
 }
 
-input, button {
+input,
+button {
   padding: 1em;
 }
 
-.login-button, .google-login, .register-button {
+.login-button,
+.google-login,
+.register-button {
   margin: 1em;
   border-radius: 20px;
   background-color: #ff2929;
   color: rgb(235, 239, 245);
 }
-
 </style>
